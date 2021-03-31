@@ -14,11 +14,11 @@
 
 
 ARG UBUNTU_VERSION=18.04
-ARG CUDA=11.1
+ARG CUDA=11.0
 FROM nvidia/cuda:${CUDA}.1-base-ubuntu${UBUNTU_VERSION} as base
 
 # CUDA are specified again because the FROM directive resets ARGs
-ARG CUDA=11.1
+ARG CUDA=11.0
 ARG CUDNN=8.1.0.77-1
 ARG CUDNN_MAJOR_VERSION=8
 ARG LIB_DIR_PREFIX=x86_64
@@ -69,7 +69,7 @@ RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/lib
 ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y \
-    python3.7-dev \
+    python3 \
     python3-pip
 
 RUN python3 -m pip --no-cache-dir install --upgrade \
