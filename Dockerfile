@@ -14,17 +14,17 @@
 
 
 ARG UBUNTU_VERSION=18.04
-ARG CUDA=11.0
-FROM nvidia/cuda:${CUDA}.3-base-ubuntu${UBUNTU_VERSION} as base
+ARG CUDA=11.2
+FROM nvidia/cuda:${CUDA}.1-base-ubuntu${UBUNTU_VERSION} as base
 
 # CUDA are specified again because the FROM directive resets ARGs
-ARG CUDA=11.0
+ARG CUDA=11.2
 ARG CUDNN=8.1.0.77-1
 ARG CUDNN_MAJOR_VERSION=8
 ARG LIB_DIR_PREFIX=x86_64
 ARG LIBNVINFER=7.2.2-1
 ARG LIBNVINFER_MAJOR_VERSION=7
-ARG TF_PACKAGE=tensorflow
+ARG TF_PACKAGE=tensorflow-gpu
 ARG TF_PACKAGE_VERSION=2.4.1
 
 # Needed for string substitution
