@@ -19,7 +19,7 @@ FROM nvidia/cuda:${CUDA}.1-base-ubuntu${UBUNTU_VERSION} as base
 
 # CUDA are specified again because the FROM directive resets ARGs
 ARG CUDA=11.2
-ARG CUDNN=8.1.0.77-1
+ARG CUDNN=8.1.1.33-1
 ARG CUDNN_MAJOR_VERSION=8
 ARG LIB_DIR_PREFIX=x86_64
 ARG LIBNVINFER=7.2.2-1
