@@ -33,14 +33,14 @@ SHELL ["/bin/bash", "-c"]
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential \
         cuda-command-line-tools-${CUDA/./-} \
-        libcublas-${CUDA/./-} \
+        libcublas-dev-${CUDA/./-} \
         cuda-nvrtc-${CUDA/./-} \
-        libcufft-${CUDA/./-} \
-        libcurand-${CUDA/./-} \
-        libcusolver-${CUDA/./-} \
-        libcusparse-${CUDA/./-} \
+        libcufft-dev-${CUDA/./-} \
+        libcurand-dev-${CUDA/./-} \
+        libcusolver-dev-${CUDA/./-} \
+        libcusparse-dev-${CUDA/./-} \
         curl \
-        libcudnn8=${CUDNN}+cuda${CUDA} \
+        libcudnn8-dev=${CUDNN}+cuda${CUDA} \
         libfreetype6-dev \
         libhdf5-serial-dev \
         libzmq3-dev \
